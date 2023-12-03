@@ -2285,4 +2285,4 @@ async def c_courses(message: Message):
         reply_markup=keyboard_c_courses
     )
 if __name__ == '__main__':
-    dp.run_polling(bot)
+    dp.run_polling(bot, none_stop = True)

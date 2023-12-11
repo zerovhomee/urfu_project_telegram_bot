@@ -1981,7 +1981,7 @@ async def python_main(message: Message):
     )
     await message.answer(
         text = 'Хотите узнать что нужно изучить или сразу перейдете к курсам?',
-        reply_markup= keyboard_python_main
+        reply_markup = keyboard_python_main
     )
 
 @dp.message(F.text == 'Что нужно знать Python - разработка')
@@ -2133,26 +2133,26 @@ async def python_courses(message: Message):
         reply_markup=keyboard_python_courses
     )
 
-button_c_info = KeyboardButton(text = 'Что нужно знать C/C++ разработка')
-button_c_main = KeyboardButton(text = 'Перейти к курсам C/C++ разработка')
+button_C_info = KeyboardButton(text = 'Что нужно знать C/C++ разработка')
+button_C_main = KeyboardButton(text = 'Перейти к курсам C/C++ разработка')
 
 @dp.message(F.text == 'C/C++ разработка')
-async def c_main(message: Message):
-    keyboard_c_main = ReplyKeyboardMarkup(
-        keyboard = [[button_c_main],
-                  [button_c_info],
+async def C_main(message: Message):
+    keyboard_C_main = ReplyKeyboardMarkup(
+        keyboard = [[button_C_main],
+                  [button_C_info],
                   [button_main_menu]],
         resize_keyboard=True
     )
     await message.answer(
         text = 'Хотите узнать что нужно изучить или сразу перейдете к курсам?',
-        reply_markup= keyboard_c_main
+        reply_markup= keyboard_C_main
     )
 
 @dp.message(F.text == 'Что нужно знать C/C++ разработка')
-async def c_info(message: Message):
-    keyboard_c_info = ReplyKeyboardMarkup(
-        keyboard = [[button_c_main],
+async def C_info(message: Message):
+    keyboard_C_info = ReplyKeyboardMarkup(
+        keyboard = [[button_C_main],
                   [button_main_menu]],
         resize_keyboard=True
     )
@@ -2166,31 +2166,31 @@ async def c_info(message: Message):
         '5. Работа с многозадачностью и потоками в C++ \n'
         '6. Знание библиотек и фреймворков: Qt, Boost и STL\n',
         parse_mode='HTML',
-        reply_markup=keyboard_c_info
+        reply_markup=keyboard_C_info
     )
 
-button_c_courses = KeyboardButton(text = 'Курсы C/C++ разработка')
-button_c_books = KeyboardButton(text = 'Книги C/C++ разработка')
-button_c_youtube = KeyboardButton(text = 'Видео с Youtube C/C++ разработка')
+button_C_courses = KeyboardButton(text = 'Курсы C/C++ разработка')
+button_C_books = KeyboardButton(text = 'Книги C/C++ разработка')
+button_C_youtube = KeyboardButton(text = 'Видео с Youtube C/C++ разработка')
 
 @dp.message(F.text == 'Перейти к курсам C/C++ разработка')
-async def c_choose_menu(message: Message):
-    keyboard_c_choose = ReplyKeyboardMarkup(
-        keyboard = [[button_c_courses,button_c_books],
-                  [button_c_youtube],
+async def C_choose_menu(message: Message):
+    keyboard_C_choose = ReplyKeyboardMarkup(
+        keyboard = [[button_C_courses,button_C_books],
+                  [button_C_youtube],
                   [button_main_menu]],
         resize_keyboard=True
     )
     await message.answer(
         text = 'Выберите источник информации',
-        reply_markup = keyboard_c_choose
+        reply_markup = keyboard_C_choose
     )
 
 @dp.message(F.text == 'Книги C/C++ разработка')
-async def c_books(message: Message):
-    keyboard_c_books = ReplyKeyboardMarkup(
-        keyboard = [[button_c_courses],
-                  [button_c_youtube],
+async def C_books(message: Message):
+    keyboard_C_books = ReplyKeyboardMarkup(
+        keyboard = [[button_C_courses],
+                  [button_C_youtube],
                   [button_main_menu]],
         resize_keyboard=True
     )
@@ -2212,12 +2212,12 @@ async def c_books(message: Message):
         '5. Антон Полухин: Разработка приложений на С++ с использованием Boost\n'
         'https://www.labirint.ru/books/761225/',
         parse_mode='HTML',
-        reply_markup = keyboard_c_books
+        reply_markup = keyboard_C_books
     )
 @dp.message(F.text == 'Видео с Youtube C/C++ разработка')
-async def c_youtube(message: Message):
-    keyboard_c_youtube = ReplyKeyboardMarkup(
-        keyboard = [[button_c_books,button_c_courses],
+async def C_youtube(message: Message):
+    keyboard_C_youtube = ReplyKeyboardMarkup(
+        keyboard = [[button_C_books,button_C_courses],
                   [button_main_menu]],
         resize_keyboard=True
     )
@@ -2239,14 +2239,14 @@ async def c_youtube(message: Message):
         '5. Writing a Network Client with POCO. Канал: Utah Cpp Progremmers\n'
         'https://www.youtube.com/watch?v=rRR9RTUEn4k&ab_channel=UtahCppProgram',
         parse_mode='HTML',
-        reply_markup=keyboard_c_youtube
+        reply_markup=keyboard_C_youtube
     )
 
 @dp.message(F.text == 'Курсы C/C++ разработка')
-async def c_courses(message: Message):
-    keyboard_c_courses = ReplyKeyboardMarkup(
-        keyboard = [[button_c_books],
-                  [button_c_youtube],
+async def C_courses(message: Message):
+    keyboard_C_courses = ReplyKeyboardMarkup(
+        keyboard = [[button_C_books],
+                  [button_C_youtube],
                   [button_main_menu]],
         resize_keyboard=True
     )
@@ -2281,7 +2281,7 @@ async def c_courses(message: Message):
         '4. Основы С++ и основы UE4 от Udemy\n'
         'https://www.udemy.com/course/fundamental-coding/\n',
         parse_mode='HTML',
-        reply_markup=keyboard_c_courses
+        reply_markup=keyboard_C_courses
     )
 if __name__ == '__main__':
     dp.run_polling(bot, none_stop = True)

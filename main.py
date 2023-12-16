@@ -1,8 +1,8 @@
 import telebot
 import openai
 
-OpenaAIkey = "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"
-TgKey = "6431964212:AAEFA-isNUFeEf8WajXSg-Ycb5wNGYJP3rY"
+OpenaAIkey = "****"
+TgKey = "****"
 
 openai.api_key = OpenaAIkey
 bot = telebot.TeleBot(TgKey)
